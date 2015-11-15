@@ -1,9 +1,13 @@
 package com.slawekkami;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
+/**Zadanie domowe ze zjazdu 3.
+ * Napisz funkcję, która zwraca wartość n-tego wyrazu ciągu Fibonacciego. Funkcja powinna być napisana w
+ * dwóch wersjach: iteracyjnej i rekurencyjnej.
+ * Wykonał Sławomir Kamiński
+ * GitHub user: Orzelzone.
+ */
 
 public class Main {
 
@@ -13,23 +17,19 @@ public class Main {
         System.out.println("Podaj liczbę całkowtą");
         int liczbaN = klawiatura.nextInt();
         klawiatura.close();
-        System.out.println("Obliczenie " + liczbaN + " Liczby ciągu Fibonacciego metodą iteracyjną:");
+        System.out.println("Obliczenie " + liczbaN + " liczby ciągu Fibonacciego metodą iteracyjną:");
         if (liczbaN<93){
             System.out.println(fiboiter(liczbaN));
         }else{
             //fiboiterBig(liczbaN);
             System.out.println(fiboiterBig(liczbaN).toString());
         }
-
         if (liczbaN <=38) {
             System.out.println("Obliczenie " + liczbaN + " liczby ciągu Fibonacciego metodą rekurencyjną:");
             System.out.println(fiboreku(liczbaN));
             //System.out.println(fiborekuBig(liczbaN).toString());
         } else
             System.out.println("Metoda rekurencyjna została pominieta ze względu na czas wykonania.");
-
-
-
     }
 
     //Metoda oblicza iteracyjnie
@@ -54,27 +54,6 @@ public class Main {
         } else
             return fiboreku(n - 1) + fiboreku(n - 2);
     }
-
-    //metoda oblicza rekurencyjnie
-    /*public static BigInteger fiborekuBig(long n) {
-        BigInteger a = new BigInteger("1");
-        BigInteger b = new BigInteger("0");
-     switch ((int)n) {
-        case 0:
-        return b;
-        //break;
-        case 1:
-        return a;
-        //break;
-        default:
-        return fiborekuBig(n - 1).add(fiborekuBig(n - 2));
-     }
-
-    }*/
-
-
-
-
      // metoda iteracyjna na BigIntegerach
     public static BigInteger fiboiterBig(long n) {
         BigInteger a = new BigInteger("1");
@@ -97,6 +76,21 @@ public class Main {
             return b;
         }
     }
+    //metoda oblicza rekurencyjnie działa ale ze względu na czas wykonania nie do użytku
+    /*public static BigInteger fiborekuBig(long n) {
+        BigInteger a = new BigInteger("1");
+        BigInteger b = new BigInteger("0");
+     switch ((int)n) {
+        case 0:
+        return b;
+        //break;
+        case 1:
+        return a;
+        //break;
+        default:
+        return fiborekuBig(n - 1).add(fiborekuBig(n - 2));
+     }
 
+    }*/
 
 }
